@@ -1,5 +1,7 @@
 package com.nisha.VPP.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "battery")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class BatteriesModel {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +20,12 @@ public class BatteriesModel {
     
     @Column(name = "name")
     private String name;
+
+    @Column(name = "postcode")
+    private String postcode;
+
+    @Column(name = "capacity")
+    private String capacity;
 
     public int getId() {
         return id;
@@ -30,10 +39,6 @@ public class BatteriesModel {
         this.name = name;
     }
 
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
-    }
-
     public void setCapacity(String capacity) {
         this.capacity = capacity;
     }
@@ -42,18 +47,16 @@ public class BatteriesModel {
         return name;
     }
 
-    public String getPostCode() {
-        return postCode;
-    }
-
     public String getCapacity() {
         return capacity;
     }
 
-    @Column(name = "postCode")
-    private String postCode;
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
 
-    @Column(name = "capacity")
-    private String capacity;
+    public String getPostcode() {
+        return postcode;
+    }
     
 }

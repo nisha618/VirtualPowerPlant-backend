@@ -33,9 +33,8 @@ public class BatteryRestController {
     }
 
     @PutMapping("/update/{id}")
-    public BatteriesModel update(@RequestBody BatteriesModel model,
-    @PathVariable("id") int id){
-        return batteryService.save(model);
+    public BatteriesModel update(@RequestBody BatteriesModel model,@PathVariable("id") int id){
+        return batteryService.update(model,id);
     }
 
     @DeleteMapping("/deleteById/{id}")

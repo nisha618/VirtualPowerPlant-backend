@@ -22,13 +22,13 @@ public class BatteryService {
 
     public BatteriesModel update(BatteriesModel batteryModel,int id){
         BatteriesModel obj = batteryRepo.findById(id).get();
-        if(batteryModel.getName().compareTo("") == 0){
+        if(!batteryModel.getName().equalsIgnoreCase(null)){
             obj.setName(batteryModel.getName());
         }
-        if(batteryModel.getPostCode().compareTo("") == 0){
-            obj.setPostCode(batteryModel.getPostCode());
+        if(!batteryModel.getPostcode().equalsIgnoreCase(null)){
+            obj.setPostcode(batteryModel.getPostcode());
         }
-        if(batteryModel.getCapacity().compareTo("") == 0){
+        if(!batteryModel.getCapacity().equalsIgnoreCase(null)){
             obj.setCapacity(batteryModel.getCapacity());
         }
         return batteryRepo.save(obj);

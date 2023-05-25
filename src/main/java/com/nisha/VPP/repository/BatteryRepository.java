@@ -9,7 +9,7 @@ import com.nisha.VPP.entity.BatteriesModel;
 
 public interface BatteryRepository extends JpaRepository<BatteriesModel, Integer> {
 
-    @Query(value = "SELECT * FROM battery", nativeQuery = true)
+    @Query(value = "SELECT * FROM battery order by id", nativeQuery = true)
     List<BatteriesModel> batteryList();
     
 }
