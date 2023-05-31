@@ -22,10 +22,10 @@ public class BatteriesModel {
     private String name;
 
     @Column(name = "postcode")
-    private String postcode;
+    private int postcode;
 
     @Column(name = "capacity")
-    private String capacity;
+    private double capacity;
 
     public int getId() {
         return id;
@@ -39,7 +39,7 @@ public class BatteriesModel {
         this.name = name;
     }
 
-    public void setCapacity(String capacity) {
+    public void setCapacity(double capacity) {
         this.capacity = capacity;
     }
 
@@ -47,15 +47,15 @@ public class BatteriesModel {
         return name;
     }
 
-    public String getCapacity() {
+    public double getCapacity() {
         return capacity;
     }
 
-    public void setPostcode(String postcode) {
+    public void setPostcode(int postcode) {
         this.postcode = postcode;
     }
 
-    public String getPostcode() {
+    public int getPostcode() {
         return postcode;
     }
     
